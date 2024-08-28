@@ -135,7 +135,7 @@ namespace ProductManagement.Controllers
 
             return RedirectToAction("Index", "Products");
         }
-        [HttpGet("EmployeeId")]
+        [HttpGet("Id")]
         public IActionResult Details(int id)
         {
             if (id <= 0)
