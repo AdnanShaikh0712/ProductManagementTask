@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProductManagement.Data;
 using ProductManagement.Models;
 
@@ -133,6 +134,24 @@ namespace ProductManagement.Controllers
             context.SaveChanges();
 
             return RedirectToAction("Index", "Products");
+        }
+        [HttpGet("EmployeeId")]
+        public IActionResult Details(int id)
+        {
+            if (id <= 0)
+            {
+                return View("not found");
+            }
+
+            Product product = context.Products.FirstOrDefault(s => s.Id == id);
+
+            if (id == null)
+            {
+                return View("notfound");
+            }
+            ViewData["ProductId"] = product.Id;
+            ViewData["ImageFileName"] = product.ImageUrl;
+            return View(product);
         }
 
         public IActionResult Delete(int id)
