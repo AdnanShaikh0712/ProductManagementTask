@@ -16,7 +16,6 @@ namespace ProductManagement.Models
 
         [Required]
         [Display(Name = "Price")]
-        [Range(1, 1000)]
         public double Price { get; set; }
         [ValidateNever]
         public string ImageUrl { get; set; }

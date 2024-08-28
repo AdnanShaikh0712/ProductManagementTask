@@ -1,14 +1,19 @@
 ﻿@model ProductsDTO
 
-<div class="row">
-    <div class="col-md-8 mx-auto rounded border p-3">
-        <h2 class="text-center mb-5">Edit Product</h2>
-
+<div class="col-md-10 card shadow border-0  w-60 my-8">
+    <div class="col-md-12 mx-auto rounded border p-3">
+        <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+            <div class="row">
+                <div class="text-center">
+                    <h2 class="text-white py-2">Product List</h2>
+                </div>
+            </div>
+        </div>
         <form method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="row">
-                    <div class="col-10">
-                        <div class="border p-3 mt-4">
+                    <div class="col-12">
+                        <div class="p-3 mt-4">
                             <div class="form-floating py-2 col-12">
                                 <input class="form-control border-0 shadow" readonly value="@ViewData["ProductId"]"></input>
                                 <label  class="ms-2">Id</label>
@@ -43,7 +48,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-3">
-                                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                                    <button type="submit" class="btn btn-primary form-control">Submit</button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <a asp-controller="Products" asp-action="Index" class="btn btn-primary border form-control">
